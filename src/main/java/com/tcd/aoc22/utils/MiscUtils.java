@@ -36,4 +36,38 @@ public class MiscUtils {
         
     return lines;
   }
+  
+  // NOTE(Tom): Yoinked LCM helper method from internet
+  public static long getLcm(List<Long> arr)
+  {
+      long lcm = 1;
+      int div = 2;
+
+      while (true) {
+          int counter = 0;
+          boolean divisible = false;
+
+          for (int i = 0; i < arr.size(); i++) {
+              if (arr.get(i) == 1) {
+                  counter++;
+              }
+
+              if (arr.get(i) % div == 0) {
+                  divisible = true;
+                  arr.set(i, arr.get(i) / div);
+              }
+          }
+
+          if (divisible) {
+              lcm = lcm * div;
+          }
+          else {
+              div++;
+          }
+
+          if (counter == arr.size()) {
+              return lcm;
+          }
+      }
+  }
 }
