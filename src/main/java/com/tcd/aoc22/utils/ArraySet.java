@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+// NOTE(Tom): hashset wasn't comparing properly
 public class ArraySet<T> implements Set<T> {
   private List<T> arr = new ArrayList<>();
   
@@ -59,6 +60,17 @@ public class ArraySet<T> implements Set<T> {
   @Override
   public void clear() {
     this.arr.clear();
+  }
+  
+  public T getItem (T o) {
+    for (var t : arr) {
+      if (t.equals(o)) {
+        return t;
+      }
+    }
+    
+    System.out.println("Couldn't find object in set");
+    return null;
   }
   
   // -- Didn't care to implement these

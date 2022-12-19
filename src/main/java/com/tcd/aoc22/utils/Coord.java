@@ -1,5 +1,6 @@
 package com.tcd.aoc22.utils;
 
+// TODO(Tom): maybe make xy long or generic type due to problems having arbitrary sized coords
 public class Coord {
   public int x;
   public int y;
@@ -32,6 +33,15 @@ public class Coord {
     } else {
       return false;
     }
+  }
+  
+  public boolean isCardinalNeighbor (Coord o) {
+    var d = this.mDistance(o);
+    if (d == 1) {
+      return true;
+    }
+    
+    return false;
   }
   
   public Coord clone() {

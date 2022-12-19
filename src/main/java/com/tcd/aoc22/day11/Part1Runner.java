@@ -11,7 +11,7 @@ public class Part1Runner {
   public static void main(String[] args) throws URISyntaxException {
     System.out.println("--- Day 11 Part 1 ---");
     // Read file
-    List<String> lines = MiscUtils.ReadFile("day11/d11p1.txt");
+    List<String> lines = MiscUtils.ReadFile("day11/sample.txt");
     
     List<Monkey> monkeyList = new ArrayList<>();
     for (int i = 0; i < (lines.size() / 7) + 1; i++) {

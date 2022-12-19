@@ -10,6 +10,10 @@ public class Grid<T> {
     return grid.get(coord.y).get(coord.x);
   }
   
+  public Node<T> getNode (int x, int y) {
+    return grid.get(y).get(x);
+  }
+  
   public void addNode (Node<T> node) {
     int y = node.getCoord().y;
     
@@ -18,5 +22,13 @@ public class Grid<T> {
     }
     
     grid.get(y).add(node);
+  }
+  
+  public int getWidth () {
+    return grid.get(0).size();
+  }
+  
+  public int getHeight () {
+    return grid.size();
   }
 }
