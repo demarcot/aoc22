@@ -25,4 +25,8 @@ public class IntegerWrapper {
   public int getVal() {
     return this.i;
   }
+  
+  public String toString () {
+    return "" + this.getVal();
+  }
 }

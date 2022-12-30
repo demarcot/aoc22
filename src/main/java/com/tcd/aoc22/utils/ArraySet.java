@@ -73,6 +73,10 @@ public class ArraySet<T> implements Set<T> {
     return null;
   }
   
+  public T pop () {
+    return this.arr.remove(this.arr.size() - 1);
+  }
+  
   // -- Didn't care to implement these
   @Override
   public Iterator iterator() {
